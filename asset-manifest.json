@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/forum_react/static/css/main.5f361e03.chunk.css",
+    "main.js": "/forum_react/static/js/main.9ef20367.chunk.js",
+    "main.js.map": "/forum_react/static/js/main.9ef20367.chunk.js.map",
+    "runtime-main.js": "/forum_react/static/js/runtime-main.1253af56.js",
+    "runtime-main.js.map": "/forum_react/static/js/runtime-main.1253af56.js.map",
+    "static/js/2.8023c289.chunk.js": "/forum_react/static/js/2.8023c289.chunk.js",
+    "static/js/2.8023c289.chunk.js.map": "/forum_react/static/js/2.8023c289.chunk.js.map",
+    "index.html": "/forum_react/index.html",
+    "precache-manifest.e8210e1d2e127622cd6603ad1b33591a.js": "/forum_react/precache-manifest.e8210e1d2e127622cd6603ad1b33591a.js",
+    "service-worker.js": "/forum_react/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/forum_react/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.8023c289.chunk.js.LICENSE.txt": "/forum_react/static/js/2.8023c289.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/forum_react/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1253af56.js",
+    "static/js/2.8023c289.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.9ef20367.chunk.js"
+  ]
+}

@@ -1,19 +1,13 @@
 import React, {Component} from 'react';
+import Header from './components/Header';
 
 class App extends Component {
   render() {
     return(
-      <div className = "">
-        <div className = "menu-bar">
-
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-
+      <div>
+        <Header>
+          
+        </Header>
       </div>
     )
   }

@@ -1,0 +1,10 @@
+.post {
+    text-decoration: none;
+}
+.titles {
+    display : flex;
+    flex: 1 ;
+    flex-direction: column;
+    text-decoration: none;
+}
+

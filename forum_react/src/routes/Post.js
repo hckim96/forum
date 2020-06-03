@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
 
 
-const Post = ({match}) => {
-    return(
-        <div>
-            {match.params.title}
-        </div>
-    )
+class Post extends Component {
+    render(){
+        return(
+            <div>
+                <h1>
+                    {this.props.location.state.title}
+                </h1>
+                <div>
+                    {this.props.location.state.text}
+                </div>
+            </div>
+        )
+    }
 }
 
 

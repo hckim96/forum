@@ -6,18 +6,32 @@ import Header from './components/Header';
 import Home from './routes/Home';
 import About from './routes/About';
 import Posts from './routes/Posts';
+import Post from './routes/Post';
 
+import './App.css';
 
 class App extends Component {
+
+  id = 4;
+  state = {
+    posts : [
+      {id:0, text: "post0 text", title: "post0 title"},
+      {id:1, text: "post1 text", title: "post1 title"},
+      {id:2, text: "post2 text", title: "post2 title"},
+      {id:3, text: "post3 text", title: "post3 title"}
+    ]
+  }
   render() {
     return(
-      <Router>
-        <div>
-          <Header/>
+      <Router >
+        <div className = "container">
+          <Header posts = {this.state.posts}/>
+
           <Route exact path = "/" component = {Home}/>
-          <Route path = "/posts" component = {Posts}/>
+          <Route exact path = "/posts" component = {Posts}/>
 
           <Route path ="/about" component = {About}/>
+          <Route path = "/posts/:title" component = {Post}/>
         </div>
       </Router>
     )

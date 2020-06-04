@@ -15,10 +15,10 @@ class App extends Component {
   id = 4;
   state = {
     posts : [
-      {id:0, text: "post0 text", title: "post0 title"},
-      {id:1, text: "post1 text", title: "post1 title"},
-      {id:2, text: "post2 text", title: "post2 title"},
-      {id:3, text: "post3 text", title: "post3 title"}
+      {id:0, text: "post0 text", title: "post0 title", date: "2020-06-01"},
+      {id:1, text: "post1 text", title: "post1 title", date: "2020-06-02"},
+      {id:2, text: "post2 text", title: "post2 title", date: "2020-06-03"},
+      {id:3, text: "post3 text", title: "post3 title", date: "2020-06-04"}
     ]
   }
   render() {

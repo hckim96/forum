@@ -1,13 +1,20 @@
 .post {
     text-decoration: none;
 }
-.titles {
-    display : flex;
-    flex: 1 ;
-    flex-direction: column;
+.post-list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted gray;
+}
+.post-list:hover {
+    background: rgb(214, 214, 214);
+}
+.post-list + .post-list {
+    border-top: 1px solid red;
+}
+.post-title {
     text-decoration: none;
 }
-
 .posts {
     margin-top: 1rem;
 }

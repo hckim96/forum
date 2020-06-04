@@ -1,10 +1,19 @@
-.post {
-    text-decoration: none;
-}
+
 .post-list {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px dotted gray;
+}
+.post-id {
+    width: 33%;
+}
+.post-title{
+    width: 33%;
+    text-align: center;
+}
+.post-date{
+    width: 33%;
+    text-align: end;
 }
 .post-list:hover {
     background: rgb(214, 214, 214);
@@ -15,7 +24,29 @@
 .post-title {
     text-decoration: none;
 }
-.posts {
+.posts-wrapper {
     margin-top: 1rem;
 }
 
+
+.posts-header {
+    display : flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.post-tail {
+    margin-top: 1rem;
+    display: flex;
+    float: right;
+
+}
+.post-link {
+    text-align: center;
+    width: 50px;
+    background: black;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    float:end;
+
+}

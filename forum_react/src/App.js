@@ -23,7 +23,7 @@ class App extends Component {
   }
   render() {
     return(
-      <Router >
+      <Router basename = "/forum">
         <div className = "container">
           <Header posts = {this.state.posts}/>
 

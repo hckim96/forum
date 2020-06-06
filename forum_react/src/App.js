@@ -15,6 +15,8 @@ import './App.css';
 import { dataBase } from './firebase';
 
 
+//TODO: implement comment, view, date more specific ,
+
 class App extends Component {
   constructor() {
     super();
@@ -65,7 +67,6 @@ class App extends Component {
 
   handleCreate = (data) => {
     
-    //TODO :: push to database and redirect to posts page
 
     let today = new Date();
     const year = today.getFullYear();

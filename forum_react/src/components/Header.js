@@ -7,7 +7,7 @@ class Header extends Component {
         return(
             <div className = "header">
                 <div className = "header-text">
-                    hckim's page
+                    h
                 </div>
                 <div>
                     <input className ="input"
@@ -15,8 +15,8 @@ class Header extends Component {
                 </div>
                 <div className = "menu">
                     <NavLink exact to="/" className = "menu-item" activeClassName = "active">home</NavLink>
-                    <NavLink to={{pathname: "/posts", state: {posts: this.props.posts}}} className = "menu-item" activeClassName = "active">posts</NavLink>
-                    
+                    <NavLink to =  "/posts" className = "menu-item" activeClassName = "active">posts</NavLink>
+                
                     
                     <NavLink to="/about" className = "menu-item" activeClassName = "active">about</NavLink>
                 </div>

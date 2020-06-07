@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { match } from 'assert';
 
 
 class Post extends Component {
@@ -6,10 +7,10 @@ class Post extends Component {
         return(
             <div className = "post-wrapper">
                 <h1 className = "title">
-                    {this.props.location.state.title}
+                    {this.props.post.title}
                 </h1>
                 <div className = "body">
-                    {this.props.location.state.text}
+                    {this.props.post.body}
                 </div>
                 <div className = "comment">
                     

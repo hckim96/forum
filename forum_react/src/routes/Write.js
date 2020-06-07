@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 import {Link} from 'react-router-dom';
 import './Write.css';
-
+import {useHistory} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 class Write extends Component {
     state = {
         title:"",
-        text:"",
-        date:"2020-06-04",
+        body:"",
     }
     handleChange = (e) => {
         this.setState({
@@ -17,35 +17,41 @@ class Write extends Component {
     } 
     handleChange2 = (e) => {
         this.setState({
-            text: e.target.value
+            body: e.target.value
         })
     } 
     render(){
         
         return(
             <div className = "write-wrapper">
-                <div className = "write-title">
-                    <input placeholder = "title"
+                <div >
+                    <input className = "write-title"
+                    placeholder = "title"
                     value = {this.state.title}
                     onChange= {this.handleChange}
                     >
 
                     </input>
                 </div>
-                <div className = "write-body">
-                    <input placeholder = "body"
-                        value = {this.state.text}
+                <div className = "ab">
+                    <textarea className = "write-body" rows ="30"
+                    placeholder = "body"
+                        value = {this.state.body}
                         onChange = {this.handleChange2}>
                         
-                    </input>
+                    </textarea>
 
                 </div>
                 <div className = "write-tail">
-                    <div className = "write-button"
-                        onClick = {() => this.props.onCreate(this.state)}>POST!</div>
+                    <Link to= "/posts"
+                    className = "write-button"
+                        onClick = {() => {this.props.onCreate(this.state); } }>POST!</Link>
+                        
                 </div>
             </div>
+            
         )
+
     }
 
       

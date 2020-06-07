@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, useHistory} from 'react-router-dom';
-import {Redirect} from 'react-router';
+import {Redirect,browserHistory} from 'react-router';
 import { createHashHistory } from 'history';
 import Header from './components/Header';
+import {Link} from 'react-router-dom';
+
 
 import Home from './routes/Home';
 import About from './routes/About';
@@ -10,49 +12,88 @@ import Posts from './routes/Posts';
 import Post from './routes/Post';
 import Write from './routes/Write';
 import './App.css';
+import { dataBase } from './firebase';
+
+
+//TODO: implement comment, view, date more specific ,
 
 class App extends Component {
+  constructor() {
+    super();
+  }
 
-  id = 4;
+  id = 0;
   state = {
+    
     posts : [
-      {id:0, text: "post0 text", title: "post0 title", date: "2020-06-01"},
-      {id:1, text: "post1 text", title: "post1 title", date: "8882020-06-02"},
-      {id:2, text: "post2 text", title: "post2 title", date: "2020-06-03"},
-      {id:3, text: "post3 text", title: "post3 title", date: "2020-06-04"}
-    ]
+    ],
+  }
+  
+  componentDidMount() {
+
+    dataBase.ref("/posts").on("value", snapshot => {
+      let posts = [];
+      let id = 0;
+      snapshot.forEach((snap) => {
+        posts.push(snap.val());
+        id++;
+      })
+      this.setState({posts})
+      this.id = id
+    })
+    console.log(this.state.posts)
+
   }
   render() {
+    
     return(
+      
       <Router basename = "/forum">
         <div className = "container">
           <Header posts = {this.state.posts}/>
 
           <Route exact path = "/" component = {Home}/>
-          <Route exact path = "/posts" component = {Posts}/>
-
+    <Route exact path = "/posts" render = {() => <Posts posts = {this.state.posts}/>}/>
+          
           <Route path ="/about" component = {About}/>
-          <Route path = "/posts/:title" component = {Post}/>
-          <Route path = "/post" render = {() => <Write  onCreate = {this.handleCreate}/>}/>
-
-
+          <Route path = "/posts/:id" render = {({match}) => <Post post = {this.state.posts[match.params.id]}/>}/>
+          <Route path = "/post" render = {() => <Write onCreate = {this.handleCreate}/>}/>
         </div>
+
       </Router>
+
     )
   }
 
   handleCreate = (data) => {
     
-    this.setState({
-      posts: this.state.posts.concat({id:this.id++, ... data})
+
+    let today = new Date();
+    const year = today.getFullYear();
+    let month = today.getMonth() + 1;
+  let date = today.getDate();
+
+  if (String(month).length === 1) {
+    month = '0' + String(month)
+  } 
+  if (String(date).length === 1) {
+    date = '0' + String(date)
+  }
+  let hour = today.getHours();
+  let minute = today.getMinutes();
+  let second = today.getSeconds();
+
+   dataBase.ref("posts").push({
+    id: this.id++,
+    title: data.title,
+      date: `${year}-${month}-${date}`,
+      body: data.body
+
     })
-    // this.props.history.push('/posts');
-    // useHistory().push('/posts');
-    // return <Redirect to ='/posts'/>;
-    createHashHistory().replace('/posts');
+
     
   }
-  
 }
+
 
 export default App;

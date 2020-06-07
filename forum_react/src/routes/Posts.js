@@ -4,23 +4,19 @@ import './Posts.css';
 
 class Posts extends Component {
     render(){
-        const testlist = this.props.location.state.posts.map(
+        const testlist = this.props.posts.map(
 
             ({id,text,title,date}) => (
                 <Link 
                 key = {id}
-                to = {{pathname: `/posts/${this.props.location.state.posts[id].title}`,
+                to = {{pathname: `/posts/${id}`,
 
-                state: {title: title,
-                        text: text
-                        ,id: id,
-                    date: date}
             }}><div className = "post-list">
                 <div className = "post-id">
                     {id}
                 </div>
                 <div className = "post-title">
-                    {this.props.location.state.posts[id].title}
+                    {this.props.posts[id].title}
 
                 </div>
                 <div className = "post-date">
@@ -43,7 +39,7 @@ class Posts extends Component {
                     {testlist.reverse()}
                 </div>
                 <div className = "post-tail">
-                    <Link className = "post-link"to = {{pathname: "/post", state: {posts: this.props.location.state.posts}}}>POST</Link>
+                    <Link className = "post-link"to = {{pathname: "/post", state: {posts: this.props.posts}}}>POST</Link>
 
                     </div>
             </div>

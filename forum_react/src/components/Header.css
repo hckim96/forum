@@ -3,6 +3,9 @@
     flex-direction: column;
     flex: 1;
 }
+.navbar {
+    margin-left: auto;
+}
 .input {
     border: none;
     outline: none;

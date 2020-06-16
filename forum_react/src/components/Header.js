@@ -2,12 +2,18 @@ import React, {Component} from 'react';
 import './Header.css';
 import {NavLink} from 'react-router-dom';
 
+import NavBar from './NavBar';
+
+
 class Header extends Component {
     render(){
         return(
             <div className = "header">
                 <div className = "header-text">
-                    h
+                    hc
+                </div>
+                <div className = "navbar">
+                <NavBar/>
                 </div>
                 <div>
                     <input className ="input"

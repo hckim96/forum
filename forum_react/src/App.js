@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, useHistory} from 'react-router-dom';
-import {Redirect,browserHistory} from 'react-router';
-import { createHashHistory } from 'history';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {browserHistory} from 'react-router';
 import Header from './components/Header';
-import {Link} from 'react-router-dom';
 
+import Profile from "./components/Profile";
 
 import Home from './routes/Home';
 import About from './routes/About';
@@ -13,6 +12,9 @@ import Post from './routes/Post';
 import Write from './routes/Write';
 import './App.css';
 import { dataBase } from './firebase';
+
+import NavBar from "./components/NavBar";
+// import history from "./utils/history";
 
 
 //TODO: implement comment, view, date more specific , like , login , who wrote this post 
@@ -41,7 +43,6 @@ class App extends Component {
       this.setState({posts})
       this.id = id
     })
-    console.log(this.state.posts)
 
   }
   render() {
@@ -50,13 +51,14 @@ class App extends Component {
       
       <Router 
       // basename = "/forum"
+      history = {browserHistory} 
       >
         <div className = "container">
-          <Header posts = {this.state.posts}/>
 
+          <Header posts = {this.state.posts}/>
           <Route exact path = "/" component = {Home}/>
     <Route exact path = "/posts" render = {() => <Posts posts = {this.state.posts}/>}/>
-          
+          <Route path="/profile" component={Profile} />
           <Route path ="/about" component = {About}/>
           <Route path = "/posts/:id" render = {({match}) => <Post post = {this.state.posts[match.params.id]}/>}/>
           <Route path = "/post" render = {() => <Write onCreate = {this.handleCreate}/>}/>

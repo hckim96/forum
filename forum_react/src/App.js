@@ -15,7 +15,7 @@ import './App.css';
 import { dataBase } from './firebase';
 
 
-//TODO: implement comment, view, date more specific ,
+//TODO: implement comment, view, date more specific , like , login , who wrote this post 
 
 class App extends Component {
   constructor() {
@@ -48,7 +48,9 @@ class App extends Component {
     
     return(
       
-      <Router basename = "/forum">
+      <Router 
+      // basename = "/forum"
+      >
         <div className = "container">
           <Header posts = {this.state.posts}/>
 

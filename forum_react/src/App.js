@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {browserHistory} from 'react-router';
 import Header from './components/Header';
-
+import { useAuth0 } from "./react-auth0-spa";
 import Profile from "./components/Profile";
 
 import Home from './routes/Home';
@@ -13,18 +12,12 @@ import Write from './routes/Write';
 import './App.css';
 import { dataBase } from './firebase';
 
-import NavBar from "./components/NavBar";
-// import history from "./utils/history";
-
-
 //TODO: implement comment, view, date more specific , like , login , who wrote this post 
 
 class App extends Component {
-  constructor() {
-    super();
-  }
 
   id = 0;
+
   state = {
     
     posts : [
@@ -43,15 +36,16 @@ class App extends Component {
       this.setState({posts})
       this.id = id
     })
+    
 
   }
+  
+
   render() {
-    
     return(
       
       <Router 
       // basename = "/forum"
-      history = {browserHistory} 
       >
         <div className = "container">
 
@@ -83,9 +77,9 @@ class App extends Component {
   if (String(date).length === 1) {
     date = '0' + String(date)
   }
-  let hour = today.getHours();
-  let minute = today.getMinutes();
-  let second = today.getSeconds();
+  // let hour = today.getHours();
+  // let minute = today.getMinutes();
+  // let second = today.getSeconds();
 
    dataBase.ref("posts").push({
     id: this.id++,

@@ -16,7 +16,8 @@ const Profile = () => {
 
       <h2>{user.name}</h2>
       <p>{user.email}</p>
-      <code>{JSON.stringify(user, null, 2)}</code>
+      <div>{user.nickname}</div>
+      <code>{JSON.stringify(user, null, 5)}</code>
     </Fragment>
   );
 };

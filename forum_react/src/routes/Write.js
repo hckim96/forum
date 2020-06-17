@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router';
 import {Link} from 'react-router-dom';
 import './Write.css';
-import {useHistory} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
 
 class Write extends Component {
     state = {

@@ -1,16 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Header.css';
 import {NavLink} from 'react-router-dom';
 
 import NavBar from './NavBar';
 
-
-class Header extends Component {
-    render(){
+import { useAuth0 } from "../react-auth0-spa";
+const Header = () =>  {
+    
+    
         return(
             <div className = "header">
                 <div className = "header-text">
-                    hc
+                    hc 
                 </div>
                 <div className = "navbar">
                 <NavBar/>
@@ -28,6 +29,5 @@ class Header extends Component {
                 </div>
             </div>
         )
-    }
 }
 export default Header;

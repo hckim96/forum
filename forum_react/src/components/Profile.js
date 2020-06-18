@@ -7,6 +7,8 @@ const Profile = () => {
   const { loading, user } = useAuth0();
 
   if (loading || !user) {
+    if(!user)
+      return <div>user...</div>
     return <div>Loading...</div>;
   }
 

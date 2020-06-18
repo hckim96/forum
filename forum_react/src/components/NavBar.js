@@ -7,27 +7,36 @@ import { Link } from "react-router-dom";
 import './NavBar.css';
 
 const NavBar = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout,user } = useAuth0();
 
-
+  
   return (
-    <div>
-      {!isAuthenticated && (
+    <div className = "nav-bar">
+      {!isAuthenticated&& (
+        <div>
         <button className = "button" onClick={() => {
           loginWithRedirect({});
         }}>Log in</button>
+        </div>
       )}
+      
 
         
+      
+       {(!(!user)) && (
+         <div  className = "button2">
+           hello, {user.nickname} !
+         </div>
+       )}
+        
 {isAuthenticated &&(
-           <div >
-               <div className = "button">    </div>
         <Link className = "button" to="/profile">Profile </Link>
-           </div>
            
        )}
       {isAuthenticated &&
-       <button className = "button" onClick={() => logout()}>Log out</button>
+       <button className = "button" onClick={ () => { logout();
+        
+      }}>Log out </button>
        }
       
     </div>

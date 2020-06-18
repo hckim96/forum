@@ -1,14 +1,19 @@
 .button {
     background: black;
     color: white;
-    font-size: .7rem;
-    width: 4rem;
-    padding: .1rem;
     border-radius: 5px;
-
     text-decoration: none;
     text-decoration-line: none;
-}
-.button + .button {
     margin-left: .5rem;
+    margin-right: .5rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+}
+.button2 {
+    
+}
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    
 }

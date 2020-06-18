@@ -5,14 +5,14 @@
     border-bottom: 1px dotted gray;
 }
 .post-id {
-    width: 33%;
+    width: 16.5%;
 }
 .post-title{
-    width: 33%;
+    width: 67%;
     text-align: center;
 }
 .post-date{
-    width: 33%;
+    width: 16.5%;
     text-align: end;
 }
 .post-list:hover {

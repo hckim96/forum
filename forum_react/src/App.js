@@ -36,7 +36,6 @@ class App extends Component {
       this.setState({posts})
       this.id = id
     })
-
   }
   
 

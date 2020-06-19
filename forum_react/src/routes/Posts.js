@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Posts.css';
+import { dataBase } from '../firebase';
 
 class Posts extends Component {
     
@@ -8,13 +9,31 @@ class Posts extends Component {
         const { isRestricted } = this.props
         let testlist = this.props.posts.map(
 
-            ({id,text,title,date,author}) => (
+            ({id,text,title,date,author,views}) => (
                 <Link 
                 className = 'post-list-link'
                 key = {id}
-                to = {{pathname: `/posts/${id}`
+                to = {{pathname: `/posts/${id}`}}
+                onClick = {async () => {
+                    let postKey;
+                    await dataBase.ref('/posts').orderByChild('id').equalTo(id).on('value', snapshot => {
+                        snapshot.forEach(snap => {
+                        postKey = snap.key;} )
+                        
+                        
+                    })
+                    if (!views) {
+                        await dataBase.ref('/posts/' + postKey).update({
+                            views: 1
+                        })
+                    } else {
+                        await dataBase.ref('/posts/' + postKey).update({
+                            views: views + 1
+                        })
+                    }
+                }}
 
-            }}>
+                >
                     <div className = "post-list">
                 
                         <div className = 'top'>
@@ -35,6 +54,9 @@ class Posts extends Component {
                                 </div>
                             </div>
                             <div className = 'bottom-bottom'>
+                                <div className = 'post-views'>
+                                    views: {!views ? 0 : views}
+                                </div>
                                 <div className = "post-date">
                                     {date}
                                 </div>

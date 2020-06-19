@@ -1,0 +1,10 @@
+.home-posts-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.home-posts {
+    flex: 1;
+    padding : 1rem;
+}

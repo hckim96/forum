@@ -3,8 +3,10 @@ import {Link} from 'react-router-dom';
 import './Posts.css';
 
 class Posts extends Component {
+    
     render(){
-        const testlist = this.props.posts.map(
+        const { isRestricted } = this.props
+        let testlist = this.props.posts.map(
 
             ({id,text,title,date}) => (
                 <Link 
@@ -27,6 +29,9 @@ class Posts extends Component {
                 </Link>
             )
         )
+        if (isRestricted) {
+            testlist = testlist.slice(-5);
+        }
         return(
             <div className = "posts-wrapper">
                 <div className = "posts-header">

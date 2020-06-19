@@ -46,9 +46,8 @@ class App extends Component {
       // basename = "/forum"
       >
         <div className = "container">
-
           <Header posts = {this.state.posts}/>
-          <Route exact path = "/" component = {Home}/>
+          <Route exact path = "/" render = {() => <Home posts = {this.state.posts}  />}/>
     <Route exact path = "/posts" render = {() => <Posts posts = {this.state.posts}/>}/>
           <Route path="/profile" component={Profile} />
           <Route path ="/about" component = {About}/>

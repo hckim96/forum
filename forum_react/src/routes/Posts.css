@@ -1,18 +1,45 @@
 
 .post-list {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     border-bottom: 1px dotted gray;
 }
+
+
+.top{
+    flex-grow: 1;
+}
+.middle{
+    flex-grow: 4;
+}
+.bottom{
+    flex-grow: 2;
+    display:flex;
+    flex-direction: column;
+}
+
+.bottom-top{
+    flex-grow: 1;
+
+}
+.bottom-bottom{
+    flex-grow: 1;
+}
+.post-author{
+    font-size: .75rem;
+    text-align: end;
+}
+
+
 .post-id {
-    width: 16.5%;
+    font-size: .75rem;
 }
 .post-title{
-    width: 67%;
     text-align: center;
+    font-weight: 500;
 }
 .post-date{
-    width: 16.5%;
+    font-size: .75rem;
     text-align: end;
 }
 .post-list:hover {
@@ -28,10 +55,17 @@
     margin-top: 1rem;
 }
 
-
+.posts-header-no {
+    width:33%;
+}.posts-header-title {
+    width:33%;
+    text-align: center;
+}.posts-header-author-date {
+    width:33%;
+    text-align: right;
+}
 .posts-header {
     display : flex;
-    justify-content: space-between;
     border-bottom: 1px solid black;
 }
 .post-tail {
@@ -49,4 +83,7 @@
     text-decoration: none;
     float:end;
 
+}
+.post-list-link {
+    text-decoration: none;
 }

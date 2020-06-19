@@ -12,7 +12,7 @@ import Write from './routes/Write';
 import './App.css';
 import { dataBase } from './firebase';
 
-//TODO: implement comment, view, date more specific , like , login , who wrote this post 
+//TODO: implement comment, view, date more specific , like , who wrote this post 
 
 class App extends Component {
 
@@ -47,6 +47,12 @@ class App extends Component {
       >
         <div className = "container">
           <Header posts = {this.state.posts}/>
+          {/* <button onClick = {() => alert(JSON.stringify(this.state.posts) + '' + 'id = ' + this.id)}>check</button>
+          <button onClick = {() => {
+            dataBase.ref().set({
+              
+            })
+          }} >deleteAll</button> */}
           <Route exact path = "/" render = {() => <Home posts = {this.state.posts}  />}/>
     <Route exact path = "/posts" render = {() => <Posts posts = {this.state.posts}/>}/>
           <Route path="/profile" component={Profile} />
@@ -60,9 +66,9 @@ class App extends Component {
     )
   }
 
-  handleCreate = (data) => {
+  handleCreate = (data, nickname,tmpID, tmpPW) => {
     
-
+  
     let today = new Date();
     const year = today.getFullYear();
     let month = today.getMonth() + 1;
@@ -77,17 +83,28 @@ class App extends Component {
   // let hour = today.getHours();
   // let minute = today.getMinutes();
   // let second = today.getSeconds();
-
-   dataBase.ref("posts").push({
-    id: this.id++,
-    title: data.title,
-      date: `${year}-${month}-${date}`,
-      body: data.body
-
-    })
-
+  if(nickname !== 'default name') {
+    dataBase.ref("posts").push({
+      id: this.id++,
+      title: data.title,
+        date: `${year}-${month}-${date}`,
+        body: data.body,
+      author: nickname
+      })
+    }
+    else {
+      dataBase.ref("posts").push({
+        id: this.id++,
+        title: data.title,
+          date: `${year}-${month}-${date}`,
+          body: data.body,
+        author: tmpID,
+        password: tmpPW
+        })
+    }
     
   }
+  
 }
 
 

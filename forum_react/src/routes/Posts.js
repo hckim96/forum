@@ -8,23 +8,41 @@ class Posts extends Component {
         const { isRestricted } = this.props
         let testlist = this.props.posts.map(
 
-            ({id,text,title,date}) => (
+            ({id,text,title,date,author}) => (
                 <Link 
+                className = 'post-list-link'
                 key = {id}
-                to = {{pathname: `/posts/${id}`,
+                to = {{pathname: `/posts/${id}`
 
-            }}><div className = "post-list">
-                <div className = "post-id">
-                    {id}
-                </div>
-                <div className = "post-title">
-                    {this.props.posts[id].title}
+            }}>
+                    <div className = "post-list">
+                
+                        <div className = 'top'>
+                            <div className = "post-id">
+                                #{id}
+                            </div>
+                        </div>
+                        <div className = 'middle'>
+                            <div className = "post-title">
+                                {this.props.posts[id].title}
 
-                </div>
-                <div className = "post-date">
-                    {date}
-                </div>
-            </div>
+                            </div>
+                        </div>
+                        <div className ='bottom'>
+                            <div className ='bottom-top'>
+                                <div className = 'post-author'>
+                                    {author}
+                                </div>
+                            </div>
+                            <div className = 'bottom-bottom'>
+                                <div className = "post-date">
+                                    {date}
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
                 
                 </Link>
             )
@@ -35,9 +53,9 @@ class Posts extends Component {
         return(
             <div className = "posts-wrapper">
                 <div className = "posts-header">
-                    <div>NO.</div>
-                    <div>Title</div>
-                    <div>Date</div>
+                    <div className = 'posts-header-no'>NO.</div>
+                    <div className = 'posts-header-title'>Title</div>
+                    <div className = 'posts-header-author-date'>Author/Date</div>
                 </div>
                 <div className = "posts">
                     

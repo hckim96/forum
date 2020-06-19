@@ -15,7 +15,7 @@ const About = () => {
             <br></br> -익명 글쓰기 추가함
             <br/> -e.preventdefault() 로 link 이벤트를 막을수있음 (익명 id pw 미입력시)
             <br/> -NOT FIXED 새로고침시 404 에러 고쳐야됨
-            
+            <br/> -time 두자리로 만듬
         </div>
     )
 }

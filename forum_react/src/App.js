@@ -80,14 +80,14 @@ class App extends Component {
   if (String(date).length === 1) {
     date = '0' + String(date)
   }
-  // let hour = today.getHours();
-  // let minute = today.getMinutes();
-  // let second = today.getSeconds();
+  let hour = today.getHours();
+  let minute = today.getMinutes();
+  let seconds = today.getSeconds();
   if(nickname !== 'default name') {
     dataBase.ref("posts").push({
       id: this.id++,
       title: data.title,
-        date: `${year}-${month}-${date}`,
+        date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
         body: data.body,
       author: nickname
       })
@@ -96,7 +96,7 @@ class App extends Component {
       dataBase.ref("posts").push({
         id: this.id++,
         title: data.title,
-          date: `${year}-${month}-${date}`,
+          date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
           body: data.body,
         author: tmpID,
         password: tmpPW

@@ -13,7 +13,7 @@ const About = () => {
             <br></br> - latest posts 를 this.state 에서 넘기는 데 바로 슬라이스를 하려니까 setstate가 비동기라 업데이트전에 가져와서 오류가 나는거 같음
             그래서 posts 에다가 boolean 하나 더 넘겨서 거기안에서 posts 컴포넌트 안에서 잘랏더니 됨
             <br></br> -익명 글쓰기 추가함
-            
+            <br/> -e.preventdefault() 로 link 이벤트를 막을수있음 (익명 id pw 미입력시)
             
         </div>
     )

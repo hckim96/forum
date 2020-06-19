@@ -14,6 +14,7 @@ const About = () => {
             그래서 posts 에다가 boolean 하나 더 넘겨서 거기안에서 posts 컴포넌트 안에서 잘랏더니 됨
             <br></br> -익명 글쓰기 추가함
             <br/> -e.preventdefault() 로 link 이벤트를 막을수있음 (익명 id pw 미입력시)
+            <br/> -NOT FIXED 새로고침시 404 에러 고쳐야됨
             
         </div>
     )

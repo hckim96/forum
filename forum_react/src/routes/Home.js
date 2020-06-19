@@ -9,7 +9,6 @@ const Home = (props) => {
 
  return(
      <div>
-         Home
          <div className = "home-posts-wrapper">
             <div className = 'home-posts'>
                 <LatestPosts posts = {props.posts} />

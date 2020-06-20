@@ -14,6 +14,10 @@
 .middle{
     flex-grow: 4;
 }
+.numofcomments {
+    color : rgb(40, 40, 230);
+    font-size: .75rem;
+}
 .bottom{
     flex-grow: 2;
     display:flex;

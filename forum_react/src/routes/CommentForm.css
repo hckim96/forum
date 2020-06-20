@@ -1,0 +1,36 @@
+.comment-auth{
+    margin-bottom: 1rem;
+}
+.comment-id{
+    margin-right: 1rem;
+}
+
+
+.comment-footer {
+    display: flex;
+    flex-direction: row;
+}
+.comment-text{
+
+    width: 85%;
+
+}
+.create-comment-button {
+
+    border-radius: 5px;
+    margin-left: auto;
+    width:7rem;
+    height:2rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+}
+
+.create-comment-button:hover {
+    background-color: gray;
+    cursor: pointer;
+
+}

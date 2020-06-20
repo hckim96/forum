@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: row;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .home-posts {
-    flex: 1;
     padding : 1rem;
 }

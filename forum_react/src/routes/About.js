@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
 
     return(
-        <div>
+        <div style = {{'marginBottom': '10rem'}}>
             <h1>6.18</h1>
             - allowed logout urls 에서 첫번째 url 로만 감. 06.17 ~ 
                 <br></br>- logout 버튼 onclick 뒤에 window.location.href = '/' 로 대충해결함 (안됨)
@@ -18,7 +18,12 @@ const About = () => {
             <br/> -time 두자리로 만듬
             <h1>6.20</h1>
             <br/> -((posts)) snapshot 이해가 잘 안됨 database.ref.on() snapshot[0] 으로 접근못하고 foreach 로 접근함
-            
+            <br/> - implement view
+            <br/> TODO: hc 누르면 home 
+            <br/> -commentlist 포스트눌럿을때 바로 렌더링이 안됨
+            <br/>-state,props 바뀌면 component rerender  (in class component)
+            <h1>6.21</h1>
+            <br/>-implement post views, comment 
         </div>
     )
 }

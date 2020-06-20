@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 
 import NavBar from './NavBar';
 
-import { useAuth0 } from "../react-auth0-spa";
 const Header = () =>  {
     
     

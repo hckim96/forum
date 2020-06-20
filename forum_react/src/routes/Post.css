@@ -1,0 +1,15 @@
+.comment{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.comment-header{
+ font-weight: bold;
+ font-size: large;
+ border-bottom: 1px black solid;
+ padding-bottom: .5rem;
+ margin-bottom: .5rem;
+}
+.comment-commentlist {
+    border-top: 1px gray dotted;
+    margin-top: 1rem;
+}

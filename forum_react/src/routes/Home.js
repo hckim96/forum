@@ -1,6 +1,6 @@
 import React from 'react';
 import LatestPosts from './LatestPosts';
-import PopularPosts from './PopularPosts';
+import TopPosts from './TopPosts';
 
 import './Home.css';
 
@@ -14,7 +14,7 @@ const Home = (props) => {
                 <LatestPosts posts = {props.posts} />
             </div>
             <div className = 'home-posts'>
-                <PopularPosts/>
+                <TopPosts/>
                 
             </div>
          </div>

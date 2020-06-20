@@ -24,6 +24,7 @@ const About = () => {
             <br/>-state,props 바뀌면 component rerender  (in class component)
             <h1>6.21</h1>
             <br/>-implement post views, comment 
+            <br/>-id - setID -- usernickname   -- too many rerender
         </div>
     )
 }

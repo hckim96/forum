@@ -4,6 +4,8 @@ import './CommentForm.css';
 import { dataBase } from '../firebase';
 
 const CommentForm = (props) => {
+
+
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -17,14 +19,17 @@ const CommentForm = (props) => {
   const [text, setText] = useState('');
   const [id, setID] = useState('');
   const [pw, setPW] = useState('');
-  const { user } = useAuth0();
 
-  if (!!user) {
-    setID(user.nickname);
+  const {isAuthenticated, user} = useAuth0();
+  let name;
+  if(isAuthenticated) {
+      name = user.nickname;
   }
+
+  
   return (
     <div>
-      {!user && (
+      {!isAuthenticated && (
         <div className='comment-auth'>
           <input
             className='comment-id'
@@ -52,7 +57,7 @@ const CommentForm = (props) => {
         <div
           className='create-comment-button'
           onClick={(e) => {
-            if (!user && (id === '' || pw === '')) {
+            if (!isAuthenticated && (id === '' || pw === '')) {
               e.preventDefault();
               alert('input temporary ID and temporary password');
             } else if (text === '') {
@@ -84,26 +89,21 @@ const CommentForm = (props) => {
                   ? (seconds = '0' + String(seconds))
                   : seconds;
 
+                  if(isAuthenticated) {
               dataBase.ref('comments/' + props.pid).push({
                 text: text,
-                nickname: id,
+                nickname: name,
                 password: pw,
                 date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
               });
-
-            //   dataBase
-            //   .ref('/posts')
-            //   .orderByChild('id')
-            //   .equalTo(id)
-            //   .on('value', (snapshot) => {
-            //     snapshot.forEach((snap) => {
-            //       postKey = snap.key;
-            //     });
-            //   });
-            // if (!views) {
-            //   await dataBase.ref('/posts/' + postKey).update({
-            //     views: 1,
-            //   });
+            } else {
+                dataBase.ref('comments/' + props.pid).push({
+                    text: text,
+                    nickname: id,
+                    password: pw,
+                    date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
+                  });
+            }
               let postKey;
               dataBase.ref('posts').orderByChild('id').equalTo(props.pid).on('value', snapshot => {
                   snapshot.forEach( snap => {

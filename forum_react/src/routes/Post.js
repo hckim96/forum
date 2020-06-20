@@ -22,14 +22,9 @@ class Post extends Component {
         })
       }
     
+      
     render(){
         const { post } = this.props
-        // let comments = [];
-        // dataBase.ref('comments/' + post.id).on('value', snapshot => {
-        //     snapshot.forEach(snap => {
-        //         comments.push(snap.val())
-        //     })
-        // })
 
         return(
             <div className = "post-wrapper">
@@ -44,7 +39,7 @@ class Post extends Component {
                         Comments ({post.numOfComments ? post.numOfComments : 0})
                     </div>
                     <div className = ''>
-                    <CommentForm pid = {post.id} onCreate = {this.handleCommentCreate}/>
+                    <CommentForm pid = {post.id}/>
                     <div className = 'comment-commentlist'><CommentList pid = {post.id} comments = {this.state.comments}/></div> 
                     </div>
                 </div>

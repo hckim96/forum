@@ -132,6 +132,7 @@ class App extends Component {
         body: data.body,
         author: tmpID,
         password: tmpPW,
+        postLike: 0,
       });
     }
   };

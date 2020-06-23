@@ -14,7 +14,7 @@ const Home = (props) => {
                 <LatestPosts posts = {props.posts} />
             </div>
             <div className = 'home-posts'>
-                <TopPosts/>
+                <TopPosts posts = {props.posts}/>
                 
             </div>
          </div>

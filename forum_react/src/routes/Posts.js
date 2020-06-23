@@ -39,7 +39,7 @@ class Posts extends Component {
               <div className='post-id'>#{id}</div>
             </div>
             <div className='middle'>
-        <div className='post-title'>{this.props.posts[id].title} {numOfComments && (<span className = 'numofcomments'>[{numOfComments}] </span>) }</div>
+        <div className='post-title'>{title} {numOfComments && (<span className = 'numofcomments'>[{numOfComments}] </span>) }</div>
             </div>
             <div className='bottom'>
               <div className='bottom-top'>

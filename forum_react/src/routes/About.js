@@ -27,9 +27,9 @@ const About = () => {
             <br/>-id - setID -- usernickname   -- too many rerender
             
             <h1>6.23</h1>
-            <br/> 
-            lik 늘릴때 on 괄호안에 database update 넣으면 infinite loop 
-            <br/> implemnet postlike
+            <br/> -lik 늘릴때 on 괄호안에 database update 넣으면 infinite loop 
+            <br/> -implemnet postlike
+            <br/> - javascript 에서 = 은 copy 가 아니라 reference 
         </div>
     )
 }

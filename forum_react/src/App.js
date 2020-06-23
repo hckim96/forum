@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route,HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Profile from './components/Profile';
 
@@ -10,6 +10,8 @@ import Post from './routes/Post';
 import Write from './routes/Write';
 import './App.css';
 import { dataBase } from './firebase';
+
+
 
 //TODO: implement  , like , picture upload , 
 
@@ -40,7 +42,7 @@ class App extends Component {
       >
         <div className='container'>
           <Header posts={this.state.posts} />
-         
+
           <Route
             exact
             path='/'
@@ -66,33 +68,6 @@ class App extends Component {
         </div>
       </Router>
 
-//       <HashRouter>
-// <div className='container'>
-//           <Header posts={this.state.posts} />
-//           <Route
-//             exact
-//             path='/'
-//             render={() => <Home posts={this.state.posts} />}
-//           />
-//           <Route
-//             exact
-//             path='/posts'
-//             render={() => <Posts posts={this.state.posts} />}
-//           />
-//           <Route path='/profile' component={Profile} />
-//           <Route path='/about' component={About} />
-//           <Route
-//             path='/posts/:id'
-//             render={({ match }) => (
-//               <Post post={this.state.posts[match.params.id]} />
-//             )}
-//           />
-//           <Route
-//             path='/post'
-//             render={() => <Write onCreate={this.handleCreate} />}
-//           />
-//         </div>
-//       </HashRouter>
 
     );
   }

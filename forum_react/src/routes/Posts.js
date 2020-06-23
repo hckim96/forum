@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import './Posts.css';
 import { dataBase } from '../firebase';
 
+
 class Posts extends Component {
   render() {
     const { isRestricted } = this.props;
     let testlist = this.props.posts.map(
-      ({ id, text, title, date, author, views, numOfComments,postLike }) => (
+      ({ id, title, date, author, views, numOfComments,postLike }) => (
         <Link
           className='post-list-link'
           key={id}

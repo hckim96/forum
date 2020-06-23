@@ -15,7 +15,7 @@ const PostLikeForm = (props) => {
             
         })
         dataBase.ref('posts/'+postKey).update({
-            postLike: props.post.postLike - 1
+            postLike: (props.post.postLike?props.post.postLike : 0) - 1
         })
     }
     const handleLikeClick = () => {
@@ -27,13 +27,14 @@ const PostLikeForm = (props) => {
             
         })
         dataBase.ref('posts/'+postKey).update({
-            postLike: props.post.postLike + 1
+            // postLike: props.post.postLike + 1
+            postLike: (props.post.postLike?props.post.postLike : 0) + 1
         })
     }
     return (
         <div className = 'post-like-form-wrapper'>
             <div className = 'post-like-form-like-number'>
-                {props.post.postLike}
+                {props.post.postLike?props.post.postLike : 0}
             </div>
 
             <div className = 'post-like-form-buttons-wrapper'>

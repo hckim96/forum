@@ -29,7 +29,8 @@ const About = () => {
             <h1>6.23</h1>
             <br/> -lik 늘릴때 on 괄호안에 database update 넣으면 infinite loop 
             <br/> -implemnet postlike
-            <br/> - javascript 에서 = 은 copy 가 아니라 reference 
+            <br/> - javascript 에서 = 은 copy 가 아니라 reference  라서 sort 같은거할때 json stringfy parse 해줘야함
+        
         </div>
     )
 }

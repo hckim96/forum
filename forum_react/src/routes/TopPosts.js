@@ -4,7 +4,7 @@ import React from 'react';
 import './TopPosts.css';
 
 const TopPosts = (props) => {
-    let topPosts = props.posts.sort( (a,b) => { 
+    let topPosts = JSON.parse(JSON.stringify(props.posts)).sort( (a,b) => { // need
         return a.postLike < b.postLike ? -1 : a.postLike > b.postLike ? 1: 0;
     })
     

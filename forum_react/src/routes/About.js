@@ -25,6 +25,8 @@ const About = () => {
             <h1>6.21</h1>
             <br/>-implement post views, comment 
             <br/>-id - setID -- usernickname   -- too many rerender
+            <br/> 
+            lik 늘릴때 on 괄호안에 database update 넣으면 infinite loop 
         </div>
     )
 }

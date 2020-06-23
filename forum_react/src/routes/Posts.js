@@ -7,7 +7,7 @@ class Posts extends Component {
   render() {
     const { isRestricted } = this.props;
     let testlist = this.props.posts.map(
-      ({ id, text, title, date, author, views, numOfComments }) => (
+      ({ id, text, title, date, author, views, numOfComments,postLike }) => (
         <Link
           className='post-list-link'
           key={id}
@@ -46,6 +46,7 @@ class Posts extends Component {
                 <div className='post-author'>{author}</div>
               </div>
               <div className='bottom-bottom'>
+                <div className = 'post-likes'>postLike: {!postLike ? 0 : postLike}</div>
                 <div className='post-views'>views: {!views ? 0 : views}</div>
                 <div className='post-date'>{date}</div>
               </div>

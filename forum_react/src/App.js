@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route,HashRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Profile from './components/Profile';
 
@@ -11,7 +11,7 @@ import Write from './routes/Write';
 import './App.css';
 import { dataBase } from './firebase';
 
-//TODO: implement comment, view, date more specific , like , who wrote this post
+//TODO: implement  , like , picture upload , 
 
 class App extends Component {
   id = 0;
@@ -40,12 +40,7 @@ class App extends Component {
       >
         <div className='container'>
           <Header posts={this.state.posts} />
-          {/* <button onClick = {() => alert(JSON.stringify(this.state.posts) + '' + 'id = ' + this.id)}>check</button>
-          <button onClick = {() => {
-            dataBase.ref().set({
-              
-            })
-          }} >deleteAll</button> */}
+         
           <Route
             exact
             path='/'
@@ -61,7 +56,7 @@ class App extends Component {
           <Route
             path='/posts/:id'
             render={({ match }) => (
-              <Post post={this.state.posts[match.params.id]} />
+              <Post post={this.state.posts[match.params.id] } postid = {match.params.id} />
             )}
           />
           <Route
@@ -70,6 +65,35 @@ class App extends Component {
           />
         </div>
       </Router>
+
+//       <HashRouter>
+// <div className='container'>
+//           <Header posts={this.state.posts} />
+//           <Route
+//             exact
+//             path='/'
+//             render={() => <Home posts={this.state.posts} />}
+//           />
+//           <Route
+//             exact
+//             path='/posts'
+//             render={() => <Posts posts={this.state.posts} />}
+//           />
+//           <Route path='/profile' component={Profile} />
+//           <Route path='/about' component={About} />
+//           <Route
+//             path='/posts/:id'
+//             render={({ match }) => (
+//               <Post post={this.state.posts[match.params.id]} />
+//             )}
+//           />
+//           <Route
+//             path='/post'
+//             render={() => <Write onCreate={this.handleCreate} />}
+//           />
+//         </div>
+//       </HashRouter>
+
     );
   }
 

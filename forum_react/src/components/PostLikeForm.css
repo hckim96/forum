@@ -1,0 +1,37 @@
+.post-like-form-wrapper {
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    margin:auto
+}
+
+.post-like-form-like-number{
+    border-bottom: 1px white solid;
+}
+
+.post-like-form-buttons-wrapper{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.post-like-form-hate-button{
+    border-right: 1px white solid;
+    flex-grow: 1;
+}
+.post-like-form-hate-button:hover{
+    cursor: pointer;
+    background: gray;
+}
+.post-like-form-like-button{
+    flex-grow: 1;
+}
+.post-like-form-like-button:hover{
+    cursor: pointer;
+    background: gray;
+
+}

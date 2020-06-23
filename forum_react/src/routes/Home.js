@@ -1,6 +1,6 @@
 import React from 'react';
-import LatestPosts from './LatestPosts';
-import TopPosts from './TopPosts';
+import LatestPosts from '../components/LatestPosts';
+import TopPosts from '../components/TopPosts';
 
 import './Home.css';
 

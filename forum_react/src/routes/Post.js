@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import CommentForm from "./CommentForm";
-import CommentList from "./CommentList";
+import CommentForm from "../components/CommentForm";
+import CommentList from "../components/CommentList";
 import "./Post.css";
 import { dataBase } from "../firebase";
 import PostLikeForm from "../components/PostLikeForm";

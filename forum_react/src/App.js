@@ -5,7 +5,7 @@ import Profile from './components/Profile';
 
 import Home from './routes/Home';
 import About from './routes/About';
-import Posts from './routes/Posts';
+import Posts from './components/Posts';
 import Post from './routes/Post';
 import Write from './routes/Write';
 import './App.css';

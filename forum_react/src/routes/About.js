@@ -37,6 +37,7 @@ const About = () => {
             <br /> -implemnet postlike
             <br /> - javascript 에서 = 은 copy 가 아니라 reference 라서 sort
             같은거할때 json stringfy parse 해줘야함
+            <h1>6.24</h1>
             <br /> - mpdp 에서 왜 postkey 가 undefined?
             <br /> - implement post delete (TODO: logged in user)
             <br /> - TODO: history push

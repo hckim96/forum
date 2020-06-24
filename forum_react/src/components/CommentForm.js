@@ -4,8 +4,6 @@ import './CommentForm.css';
 import { dataBase } from '../firebase';
 
 const CommentForm = (props) => {
-
-
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -20,13 +18,12 @@ const CommentForm = (props) => {
   const [id, setID] = useState('');
   const [pw, setPW] = useState('');
 
-  const {isAuthenticated, user} = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
   let name;
-  if(isAuthenticated) {
-      name = user.nickname;
+  if (isAuthenticated) {
+    name = user.nickname;
   }
 
-  
   return (
     <div>
       {!isAuthenticated && (
@@ -89,46 +86,50 @@ const CommentForm = (props) => {
                   ? (seconds = '0' + String(seconds))
                   : seconds;
 
-                  if(isAuthenticated) {
-              dataBase.ref('comments/' + props.pid).push({
-                text: text,
-                nickname: name,
-                password: pw,
-                date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
-              });
-            } else {
+              if (isAuthenticated) {
                 dataBase.ref('comments/' + props.pid).push({
-                    text: text,
-                    nickname: id,
-                    password: pw,
-                    date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
-                  });
-            }
+                  text: text,
+                  nickname: name,
+                  password: pw,
+                  date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
+                });
+              } else {
+                dataBase.ref('comments/' + props.pid).push({
+                  text: text,
+                  nickname: id,
+                  password: pw,
+                  date: `${year}-${month}-${date} ${hour}:${minute}:${seconds}`,
+                });
+              }
               let postKey;
-              dataBase.ref('posts').orderByChild('id').equalTo(props.pid).on('value', snapshot => {
-                  snapshot.forEach( snap => {
+              dataBase
+                .ref('posts')
+                .orderByChild('id')
+                .equalTo(props.pid)
+                .on('value', (snapshot) => {
+                  snapshot.forEach((snap) => {
                     postKey = snap.key;
-                  })
-              })
+                  });
+                });
 
-              dataBase.ref('posts/' + postKey).once('value')
-                .then(snap => {
-                    if(snap.child('numOfComments').exists()) {
-                        dataBase.ref('posts/' + postKey).update({
-                            numOfComments: snap.val().numOfComments + 1
-                        })
-                    } else {
-                        dataBase.ref('posts/' + postKey).update({
-                            numOfComments: 1
-                        })
-                    }
-                })
-              
-                setID('')
-                setPW('')
-                setText('')
+              dataBase
+                .ref('posts/' + postKey)
+                .once('value')
+                .then((snap) => {
+                  if (snap.child('numOfComments').exists()) {
+                    dataBase.ref('posts/' + postKey).update({
+                      numOfComments: snap.val().numOfComments + 1,
+                    });
+                  } else {
+                    dataBase.ref('posts/' + postKey).update({
+                      numOfComments: 1,
+                    });
+                  }
+                });
 
-
+              setID('');
+              setPW('');
+              setText('');
             }
           }}
         >

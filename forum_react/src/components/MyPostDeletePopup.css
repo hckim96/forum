@@ -1,0 +1,28 @@
+.mpdp-input {
+    text-align: center;
+}
+
+.post-delete-button {
+    background: black;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.post-delete-button:hover {
+    cursor: pointer;
+    background: gray;
+}
+.post-delete-popup {
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-delete-button:hover {
+    cursor: pointer;
+}

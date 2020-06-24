@@ -1,12 +1,12 @@
-.comment{
+.comment {
     margin-bottom: 5rem;
 }
-.comment-header{
- font-weight: bold;
- font-size: large;
- border-bottom: 1px black solid;
- padding-bottom: .5rem;
- margin-bottom: .5rem;
+.comment-header {
+    font-weight: bold;
+    font-size: large;
+    border-bottom: 1px black solid;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .comment-commentlist {
     border-top: 1px gray dotted;
@@ -21,32 +21,27 @@
     margin-bottom: 1rem;
 }
 
-.post-delete-button{
-    text-align: center;
-}
-
-
 .modal {
-    font-size: 12px;
-  }
-  .modal > .header {
+    font-size: 20px;
+}
+.modal > .header {
     width: 100%;
     border-bottom: 1px solid gray;
     font-size: 18px;
     text-align: center;
     padding: 5px;
-  }
-  .modal > .content {
+}
+.modal > .content {
     width: 100%;
     padding: 10px 5px;
-  }
-  .modal > .actions {
+}
+.modal > .actions {
     width: 100%;
     padding: 10px 5px;
     margin: auto;
     text-align: center;
-  }
-  .modal > .close {
+}
+.modal > .close {
     cursor: pointer;
     position: absolute;
     display: block;
@@ -58,4 +53,28 @@
     background: #ffffff;
     border-radius: 18px;
     border: 1px solid #cfcece;
-  }
+}
+
+.post-nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px black solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.post-nav-bar-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    border-right: 1px solid white;
+}
+.post-nav-bar-link:hover {
+    cursor: pointer;
+    background: gray;
+}

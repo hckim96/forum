@@ -1,20 +1,19 @@
-.comment-list-comment-wrapper{
-    display:flex;
-    flex-direction: column;
-    text-align: left;
-    border-bottom: 1px rgb(105, 105, 105) dotted
+.comment-list-comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-bottom: 1px rgb(105, 105, 105) dotted;
 }
 
 .comment-list-comment-wrapper + .comment-list-comment-wrapper {
 }
-.comment-list-comment-header{
-    font-weight: bold;
-    font-size: large;
+.comment-list-comment-header {
+  font-weight: bold;
+  font-size: large;
 }
-.comment-list-comment-body{
-
+.comment-list-comment-body {
 }
-.comment-list-comment-footer{
-    font-size: .75rem;
-    color: gray;
+.comment-list-comment-footer {
+  font-size: 0.75rem;
+  color: gray;
 }

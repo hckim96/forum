@@ -1,67 +1,62 @@
-
 .post-list {
     display: flex;
     flex-direction: column;
     border-bottom: 1px dotted gray;
-    color: black
+    color: black;
 }
 
-
-.top{
+.top {
     flex-grow: 1;
-    color:rgb(156, 156, 156);
+    color: rgb(156, 156, 156);
 }
-.middle{
+.middle {
     flex-grow: 4;
 }
 .numofcomments {
-    color : rgb(40, 40, 230);
-    font-size: .75rem;
+    color: rgb(40, 40, 230);
+    font-size: 0.75rem;
 }
-.bottom{
+.bottom {
     flex-grow: 2;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    color:rgb(133, 133, 133);
+    color: rgb(133, 133, 133);
 }
 
-.bottom-top{
+.bottom-top {
     flex-grow: 1;
-
 }
-.bottom-bottom{
+.bottom-bottom {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    
 }
-.post-author{
-    font-size: .75rem;
+.post-author {
+    font-size: 0.75rem;
     text-align: end;
 }
 
-
 .post-id {
-    font-size: .75rem;
+    font-size: 0.75rem;
 }
-.post-title{
+.post-title {
     text-align: left;
     font-weight: 500;
 }
-.post-date{
-    font-size: .75rem;
+.post-date {
+    font-size: 0.75rem;
     text-align: center;
 }
-.post-views{
-    font-size: .75rem;
+.post-views {
+    font-size: 0.75rem;
     text-align: center;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 }
-.post-likes{
-    font-size: .75rem;
+.post-likes {
+    font-size: 0.75rem;
     text-align: center;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 }
 
 .post-list:hover {
@@ -78,23 +73,24 @@
 }
 
 .posts-header-no {
-    width:33%;
-}.posts-header-title {
-    width:33%;
+    width: 33%;
+}
+.posts-header-title {
+    width: 33%;
     text-align: center;
-}.posts-header-author-date {
-    width:33%;
+}
+.posts-header-author-date {
+    width: 33%;
     text-align: right;
 }
 .posts-header {
-    display : flex;
+    display: flex;
     border-bottom: 1px solid black;
 }
 .post-tail {
     margin-top: 1rem;
     display: flex;
     float: right;
-
 }
 .post-link {
     text-align: center;
@@ -103,9 +99,8 @@
     color: white;
     border-radius: 4px;
     text-decoration: none;
-    float:end;
+    float: end;
     margin-bottom: 7rem;
-
 }
 .post-list-link {
     text-decoration: none;

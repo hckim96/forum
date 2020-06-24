@@ -4,7 +4,7 @@ import { dataBase } from '../firebase';
 import './MyPostDeletePopup.css';
 
 // to know :  ref
-//props ;; postid, postKey
+//props ;;  postKey
 
 const MyPostDeletePopup = (props) => {
     const [pw, setPW] = useState('');

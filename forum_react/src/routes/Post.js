@@ -7,6 +7,7 @@ import { dataBase } from '../firebase';
 import PostLikeForm from '../components/PostLikeForm';
 import { Link } from 'react-router-dom';
 import MyPostDeletePopup from '../components/MyPostDeletePopup';
+import MyPostEdit from '../components/MyPostEdit';
 
 //prop : post, postid
 class Post extends Component {
@@ -48,10 +49,8 @@ class Post extends Component {
                     <Link to='/posts' className='post-nav-bar-link'>
                         posts
                     </Link>
-                    <MyPostDeletePopup
-                        postid={this.props.postid}
-                        postKey={this.postKey}
-                    />
+                    <MyPostDeletePopup postKey={this.postKey} />
+                    <MyPostEdit postKey={this.postKey} />
                 </div>
                 <div className='post-post-like-wrapper'>
                     <PostLikeForm post={post} />
